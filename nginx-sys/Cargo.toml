@@ -17,7 +17,11 @@ rust-version.workspace = true
 [dependencies]
 
 [build-dependencies]
-bindgen = "0.71"
+bindgen = { version = "0.71", default-features = false, features = [
+    "static",
+    "prettyplease",
+    "logging",
+] }
 cc = "1.2.0"
 duct = { version = "0.13.7", optional = true }
 dunce = "1.0.5"
